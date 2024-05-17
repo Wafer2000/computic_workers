@@ -1,5 +1,6 @@
 import 'package:computic_workers/components/routes/tools/my_drawer.dart';
 import 'package:computic_workers/components/routes/tools/notifications.dart';
+import 'package:computic_workers/components/routes/views/services/maintenance.dart';
 import 'package:computic_workers/components/routes/views/services/shope.dart';
 import 'package:computic_workers/style/global_colors.dart';
 import 'package:flutter/material.dart';
@@ -83,8 +84,8 @@ class _ServicesState extends State<Services> {
                         child: FloatingActionButton.extended(
                           heroTag: 'mantenimientoTag',
                           onPressed: () {
-                            /*Navigator.pushNamed(
-                                context, MaintenanceService.routname);*/
+                            Navigator.pushNamed(
+                                context, MaintenanceService.routname);
                           },
                           label: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

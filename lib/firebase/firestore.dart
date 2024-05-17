@@ -14,13 +14,25 @@ class GetCollectionsServices {
   }
 }
 
+class GetCollectionsServiceAnyClient {
+  final _firestore = FirebaseFirestore.instance;
+
+  Stream<QuerySnapshot> getCollections(String service) {
+    final services = _firestore
+        .collection('Servicios')
+        .where('servicio', isEqualTo: service)
+        .snapshots();
+    return services;
+  }
+}
+
 class GetCollectionsEmployees {
   final _firestore = FirebaseFirestore.instance;
 
-  Stream<QuerySnapshot> getCollections(String cargo) {
+  Stream<QuerySnapshot> getCollections() {
     final services = _firestore
         .collection('Users')
-        .where('cargo', isEqualTo: cargo)
+        .where('cargo', isEqualTo: 'employees')
         .snapshots();
     return services;
   }

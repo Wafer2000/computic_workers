@@ -2,10 +2,12 @@
 
 import 'package:computic_workers/components/routes/log/login.dart';
 import 'package:computic_workers/components/routes/log/register.dart';
+import 'package:computic_workers/components/routes/tools/services/details_Mantenimiento.dart';
 import 'package:computic_workers/components/routes/views/employees.dart';
 import 'package:computic_workers/components/routes/views/guard/extra_data.dart';
 import 'package:computic_workers/components/routes/views/services.dart';
 import 'package:computic_workers/components/routes/views/profile.dart';
+import 'package:computic_workers/components/routes/views/services/maintenance.dart';
 import 'package:computic_workers/components/routes/views/services/shope.dart';
 import 'package:computic_workers/components/splash_view.dart';
 import 'package:computic_workers/shared/prefe_users.dart';
@@ -40,7 +42,8 @@ class _RoutesState extends State<Routes> {
         //CreationService.routname: (context) => const CreationService(),
         //FacilityService.routname: (context) => const FacilityService(),
         //TrainingService.routname: (context) => const TrainingService(),
-        //MaintenanceService.routname: (context) => const MaintenanceService(),
+        MaintenanceService.routname: (context) => const MaintenanceService(),
+        DetailsMantenimiento.routname: (context) => DetailsMantenimiento(id: ModalRoute.of(context)!.settings.arguments as String),
       },
       theme: lightMode,
       darkTheme: darkMode,
