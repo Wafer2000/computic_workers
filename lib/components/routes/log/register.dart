@@ -158,7 +158,7 @@ class _RegisterState extends State<Register> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('¿Tienes una cuenta?',
+                    Text('¿Tienes una cuenta? ',
                         style: TextStyle(
                             color: Theme.of(context).colorScheme.secondary)),
                     GestureDetector(

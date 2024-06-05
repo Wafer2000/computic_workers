@@ -2,13 +2,20 @@
 
 import 'package:computic_workers/components/routes/log/login.dart';
 import 'package:computic_workers/components/routes/log/register.dart';
-import 'package:computic_workers/components/routes/tools/services/details_Mantenimiento.dart';
+import 'package:computic_workers/components/routes/tools/llegada.dart';
+import 'package:computic_workers/components/routes/tools/services/admin/details_mantenimiento.dart';
+import 'package:computic_workers/components/routes/tools/services/admin/details_rent.dart';
+import 'package:computic_workers/components/routes/tools/services/details_mantenimiento_employee.dart';
+import 'package:computic_workers/components/routes/tools/services/details_rent_employee.dart';
 import 'package:computic_workers/components/routes/views/employees.dart';
 import 'package:computic_workers/components/routes/views/guard/extra_data.dart';
 import 'package:computic_workers/components/routes/views/services.dart';
 import 'package:computic_workers/components/routes/views/profile.dart';
-import 'package:computic_workers/components/routes/views/services/maintenance.dart';
-import 'package:computic_workers/components/routes/views/services/shope.dart';
+import 'package:computic_workers/components/routes/views/services/admin/maintenance.dart';
+import 'package:computic_workers/components/routes/views/services/admin/rent.dart';
+import 'package:computic_workers/components/routes/views/services/admin/shope.dart';
+import 'package:computic_workers/components/routes/views/services/maintenance_employee.dart';
+import 'package:computic_workers/components/routes/views/services/rent_employee.dart';
 import 'package:computic_workers/components/splash_view.dart';
 import 'package:computic_workers/shared/prefe_users.dart';
 import 'package:computic_workers/style/theme/dark.dart';
@@ -29,21 +36,28 @@ class _RoutesState extends State<Routes> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: SplashView.routname,
+      home: const Services(),
       routes: {
-        Services.routname: (context) => const Services(),
         Login.routname: (context) => const Login(),
         Profile.routname: (context) => const Profile(),
         Register.routname: (context) => const Register(),
         ExtraData.routname: (context) => const ExtraData(),
         SplashView.routname: (context) => const SplashView(),
         Employees.routname: (context) => const Employees(),
-        //RentService.routname: (context) => const RentService(),
+        Services.routname: (context) => const Services(),
+        Llegada.routname: (context) => const Llegada(),
         ShopeService.routname: (context) => const ShopeService(),
-        //CreationService.routname: (context) => const CreationService(),
-        //FacilityService.routname: (context) => const FacilityService(),
-        //TrainingService.routname: (context) => const TrainingService(),
+        //Mantenimiento
         MaintenanceService.routname: (context) => const MaintenanceService(),
-        DetailsMantenimiento.routname: (context) => DetailsMantenimiento(id: ModalRoute.of(context)!.settings.arguments as String),
+        DetailsMaintenance.routname: (context) => const DetailsMaintenance(),
+        MaintenanceEmployeeService.routname: (context) => const MaintenanceEmployeeService(),
+        DetailsMaintenanceEmployee.routname: (context) => const DetailsMaintenanceEmployee(),
+        //Alquiler
+        RentService.routname: (context) => const RentService(),
+        DetailsRent.routname: (context) => const DetailsRent(),
+        RentEmployeeService.routname: (context) => const RentEmployeeService(),
+        DetailsRentEmployee.routname: (context) => const DetailsRentEmployee(),
+        
       },
       theme: lightMode,
       darkTheme: darkMode,

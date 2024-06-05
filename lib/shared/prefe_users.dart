@@ -22,6 +22,14 @@ class PreferencesUser {
     _prefs.setString('ultimateUid', value);
   }
 
+  String get detailsId {
+    return _prefs.getString('detailsId') ?? '';
+  }
+
+  set detailsId(String value) {
+    _prefs.setString('detailsId', value);
+  }
+
   bool get isAdmin {
     return _prefs.getBool('isAdmin') ?? false;
   }

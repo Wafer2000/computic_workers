@@ -113,7 +113,7 @@ class _LoginState extends State<Login> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('¿No tienes una cuenta?',
+                    Text('¿No tienes una cuenta? ',
                         style: TextStyle(
                             color: Theme.of(context).colorScheme.secondary)),
                     GestureDetector(

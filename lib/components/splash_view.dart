@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_null_comparison, use_build_context_synchronously, await_only_futures
 
 import 'dart:async';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:computic_workers/components/routes/log/login.dart';
 import 'package:computic_workers/components/routes/views/services.dart';
 import 'package:computic_workers/shared/prefe_users.dart';
@@ -31,7 +30,7 @@ class _SplashViewState extends State<SplashView> {
             return const Services();
           }),
         );
-      } else if (uid != null && uid != '') {
+      } else if (uid != null && uid != '' && prefs.ultimateUid != admin) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) {
             return const Services();

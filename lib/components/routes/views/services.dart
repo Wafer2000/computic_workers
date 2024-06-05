@@ -1,7 +1,11 @@
 import 'package:computic_workers/components/routes/tools/my_drawer.dart';
 import 'package:computic_workers/components/routes/tools/notifications.dart';
-import 'package:computic_workers/components/routes/views/services/maintenance.dart';
-import 'package:computic_workers/components/routes/views/services/shope.dart';
+import 'package:computic_workers/components/routes/views/services/admin/maintenance.dart';
+import 'package:computic_workers/components/routes/views/services/admin/rent.dart';
+import 'package:computic_workers/components/routes/views/services/admin/shope.dart';
+import 'package:computic_workers/components/routes/views/services/maintenance_employee.dart';
+import 'package:computic_workers/components/routes/views/services/rent_employee.dart';
+import 'package:computic_workers/shared/prefe_users.dart';
 import 'package:computic_workers/style/global_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +18,7 @@ class Services extends StatefulWidget {
 }
 
 class _ServicesState extends State<Services> {
+  final _pref = PreferencesUser();
   @override
   void dispose() {
     super.dispose();
@@ -84,8 +89,14 @@ class _ServicesState extends State<Services> {
                         child: FloatingActionButton.extended(
                           heroTag: 'mantenimientoTag',
                           onPressed: () {
-                            Navigator.pushNamed(
-                                context, MaintenanceService.routname);
+                            if (_pref.isAdmin == true) {
+                              Navigator.pushNamed(
+                                  context, MaintenanceService.routname);
+                            }
+                            if (_pref.isAdmin == false) {
+                              Navigator.pushNamed(
+                                  context, MaintenanceEmployeeService.routname);
+                            }
                           },
                           label: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -321,7 +332,14 @@ class _ServicesState extends State<Services> {
                         child: FloatingActionButton.extended(
                           heroTag: 'alquilerTag',
                           onPressed: () {
-                            /*Navigator.pushNamed(context, RentService.routname);*/
+                            if (_pref.isAdmin == true) {
+                              Navigator.pushNamed(
+                                  context, RentService.routname);
+                            }
+                            if (_pref.isAdmin == false) {
+                              Navigator.pushNamed(
+                                  context, RentEmployeeService.routname);
+                            }
                           },
                           label: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

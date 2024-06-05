@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:computic_workers/components/routes/tools/my_drawer.dart';
-import 'package:computic_workers/firebase/firestore.dart';
-import 'package:computic_workers/shared/prefe_users.dart';
 import 'package:computic_workers/style/global_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -15,7 +13,6 @@ class Employees extends StatefulWidget {
 }
 
 class _EmployeesState extends State<Employees> {
-  final _pref = PreferencesUser();
 
   @override
   void dispose() {
@@ -91,7 +88,6 @@ class _EmployeesState extends State<Employees> {
               DocumentSnapshot document = service![index];
               Map<String, dynamic> user =
                   document.data() as Map<String, dynamic>;
-              String docID = document.id;
 
               int edadf = 0;
 
